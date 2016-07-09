@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def have?(other_item)
-    haves.include?(other_item.id)
+    haves.find_by(item_id: other_item.id)
   end
 
   def want(other_item)
@@ -57,6 +57,6 @@ class User < ActiveRecord::Base
   end
 
   def want?(other_item)
-    wants.include?(other_item.id)
+    wants.find_by(item_id: other_item.id)
   end
 end

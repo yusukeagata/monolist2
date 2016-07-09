@@ -2,13 +2,13 @@
   <% if current_user.want? item %>
     <%= render 'items/unwant' , item: item %>
   <% else %>
-    <%= render 'items/want' , item: item %>
+    <%= render 'items/want' , item: item  %>
   <% end %> 
 
   <% if current_user.have? item %>
     <%= render 'items/unhave' , item: item %>
   <% else %>
-    <%= render 'items/have' , item: item %>
+    <%= render 'items/have' , item: item  %>
   <% end %>
 
   <% unless current_page?(item) %>

@@ -3,6 +3,11 @@
 <% else %>
   $(".want-<%= @item.id %>,[item_code='want-<%= @item.item_code %>']").replaceWith("<%= escape_javascript(render('items/unwant' , item: @item)) %>");
 <% end %>
+<% if params[:type] == "Unhave" %>
+  $(".unhave-<%= @item.id %>,[item_code='unhave-<%= @item.item_code %>']").replaceWith("<%= escape_javascript(render('items/have' , item: @item)) %>");
+<% else %>
+  $(".unwant-<%= @item.id %>,[item_code='unwant-<%= @item.item_code %>']").replaceWith("<%= escape_javascript(render('items/want' , item: @item)) %>");
+<% end %>
 
 $('.btn-have,.btn-want').removeAttr('disabled');
 
