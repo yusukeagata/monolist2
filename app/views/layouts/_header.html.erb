@@ -20,17 +20,27 @@
               <li><%= link_to "新規登録", signup_path %></li>
               <li><%= link_to "ログイン", login_path %></li>
             <% else %>
-              <li>
-                <%= link_to new_item_path do %>
-                  <span class="glyphicon glyphicon-king" aria-hidden="true"></span>
-                  ランキング
-                <% end %>
-              </li>
-              <li>
+            <li>
                 <%= link_to new_item_path do %>
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   アイテムを追加
                 <% end %>
+              </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-king" aria-hidden="true"></span>
+                  ランキング
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to "HAVE", have_ranking_index_path %>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <%= link_to "WANT", want_ranking_index_path %>
+                  </li>
+                </ul>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
