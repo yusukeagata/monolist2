@@ -1,10 +1,11 @@
 <h1 class="title-ranking">Have Ranking</h1>
 <ul class="ranking-list">
-<% @item.each do |i| %>
-     <li><%= h(i.title) %></li>
+<% @item.each.with_index(1) do |rank,i| %>
+     <li class="ranks"><%= "第#{i}位" %></li>
+     <li><%= h(rank.title) %></li>
      <li><%= link_to(
-         image_tag(i.large_image, width: '300', alt:i.title),
-         i.detail_page_url, target:"_blank") %></li>
-     <li><%= link_to( "詳細", i.detail_page_url, target:"_blank") %></li>
+         image_tag(rank.large_image, width: '300', alt:rank.title),
+         rank.detail_page_url, target:"_blank") %></li>
+     <li><%= link_to( "詳細", rank.detail_page_url, target:"_blank") %></li>
 <% end %>
 </ul>
