@@ -11,8 +11,8 @@
         </div>
         <div class="detail">
           <p class="title">
-            <%= item['itemName'] %>
-            
+            <%#= item['itemName'] %>
+            <%= link_to(item['itemName'], item['itemUrl'], target:"_blank") %>
           </p>
         </div>
         <div class="action clearfix">
