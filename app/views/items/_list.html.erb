@@ -13,7 +13,8 @@
         </div>
         <div class="detail">
           <p class="title">
-            <%= item.title %>
+            <%#= item.title %>
+            <%= link_to(item.title, item.detail_page_url, target:"_blank") %>
           </p>
         </div>
         <%= render 'items/action' , item: item if logged_in? %>
